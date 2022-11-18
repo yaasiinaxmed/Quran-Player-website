@@ -289,7 +289,9 @@ html {
 .screens {
     width: 100%;
     height: 80vh;
-    padding: 4rem .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-sliders {
@@ -329,7 +331,8 @@ html {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin-top: 20px;
+    position: relative;
+    top: 20px;
 }
 
 .container-sliders .navigations-radio .btn-radio {
@@ -651,7 +654,7 @@ html {
     }
 
     .container-sliders .sliders {
-        width: 90%;
+        width: 100%;
         height: 220px;
     }
 
