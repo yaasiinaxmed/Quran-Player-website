@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- nav star -->
         <div class="nav">
             <div class="logo">
                 <img src="./src/logo.png" alt="">
@@ -37,10 +38,15 @@
                 </div>
             </ul>
         </div>
+        <!-- nav end -->
+        <!-- scrollTop start -->
         <div class="scrollTop">
             <i class="fa fa-angle-up"></i>
         </div>
+        <!-- scrollTop end -->
+        <!-- main content page start -->
         <div class="main">
+            <!-- home start -->
             <div class="home reveal" id="home">
                 <div class="home-left">
                     <div class="text">
@@ -57,6 +63,8 @@
                 </div>
                 <img src="./src/home.jpg" class="img" alt="">
             </div>
+            <!-- home end -->
+            <!-- about start -->
             <div class="about" id="about">
                 <img src="./src/logo2.jpg" alt="">
                 <div class="about-text">
@@ -68,8 +76,44 @@
                     </p>
                 </div>
             </div>
+            <!-- about end -->
+            <!-- screens start -->
+            <div class="screens" id="sceens">
+                <div class="container-sliders">
+                    <div class="sliders"> 
+                        <!-- radio checked images
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4"> -->
+                       <!-- image sliders -->
+                       <div class="slider active">
+                         <img src="./src/image1.png" alt="">
+                       </div>
+                       <div class="slider">
+                        <img src="./src/image2.png" alt="">
+                      </div>
+                      <div class="slider">
+                        <img src="./src/image3.png" alt="">
+                      </div>
+                      <div class="slider">
+                        <img src="./src/image4.png" alt="">
+                      </div>
+                      <!-- sleders content end -->
+                    </div>
+                     <!-- navigations radio checked -->
+                     <div class="navigations-radio">
+                        <label for="radio1" class="btn-radio active"></label>
+                        <label for="radio2" class="btn-radio"></label>
+                        <label for="radio3" class="btn-radio"></label>
+                        <label for="radio4" class="btn-radio"></label>
+                      </div>
+                </div>
+            </div>
+            <!-- screens end -->
         </div>
     </div>
+    <!-- main content page end -->
     <script src="https://unpkg.com/scrollreveal"></script>
    <script src="./main.js"></script>
 </body>

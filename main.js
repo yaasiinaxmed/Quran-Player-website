@@ -6,6 +6,31 @@ const menu = document.querySelector(".menu");
 const showMenu = document.querySelector('.showMenu');
 const mainEL = document.querySelector(".main");
 const scrollTop = document.querySelector(".scrollTop");
+const sliders = document.querySelectorAll(".slider");
+const btns = document.querySelectorAll(".btn-radio");
+
+let currentSlider = 1;
+
+const menualSlider = function(menual){
+
+    sliders.forEach((slider) => {
+        slider.classList.remove("active");
+
+        btns.forEach( (btn) => {
+            btn.classList.remove("active");
+        });
+    });
+
+    sliders[menual].classList.add("active");
+    btns[menual].classList.add("active");
+}
+
+btns.forEach((btn,i) => {
+    btn.addEventListener("click", () => {
+        menualSlider(i);
+        currentSlider = 1;
+    });
+});
 
 window.addEventListener("scroll", () => {
     scrollTop.classList.toggle("active", window.scrollY > 400);
@@ -64,6 +89,8 @@ const srTop = ScrollReveal({
 srTop.reveal('.home', {delay: 300})
 srTop.reveal('.text', {delay: 100})
 srTop.reveal('.img', {delay: 300})
+srTop.reveal('.sliders', {delay: 300})
+
 
 
 const srLeft = ScrollReveal({
