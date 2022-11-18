@@ -48,6 +48,8 @@ togglePlay.addEventListener("click", () => {
     }
 })
 
+audioQuran.play();
+
 audioQuran.addEventListener("ended", () => {
     audioQuran.play();
 })
