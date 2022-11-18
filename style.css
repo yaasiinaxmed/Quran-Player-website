@@ -509,6 +509,10 @@ html {
     .scrollTop {
         right: 1.7rem;
     }
+
+    .main {
+        margin: 0 2%;
+    }
 }
 
 @media (max-width: 450px) {
@@ -574,6 +578,11 @@ html {
         display: flex;
         flex-direction: column;
         gap: 4px;
+    }
+
+    .about-text p {
+        word-break: keep-all;
+        font-size: 0.8em;
     }
 }
 

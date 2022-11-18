@@ -14,7 +14,7 @@ window.addEventListener("scroll", () => {
 scrollTop.addEventListener("click", () => {
    window.scrollTo({
     top: 0,
-    behavior: "smooth",
+    // behavior: "smooth",
    })
 })
 
@@ -27,24 +27,24 @@ menu.addEventListener("click", () => {
    }
 })
 
-// mainEL.addEventListener("click", () => {
-//     if(menu.classList.contains("active")) {
-//         showMenu.style.display = 'none';
-//      } else {
-//        showMenu.style.display = 'none';
-//     }
-//     menu.classList.remove('active');
-// })
+mainEL.addEventListener("click", () => {
+    if(menu.classList.contains("active")) {
+        showMenu.style.display = 'none';
+     } else {
+       showMenu.style.display = 'none';
+    }
+    menu.classList.remove('active');
+})
 
 
 togglePlay.addEventListener("click", () => {
     togglePlay.classList.toggle("show");
     if(togglePlay.classList.contains('show')) {
         audioQuran.pause();
-        titleAudio.innerText = "Qur'an Play";
+        titleAudio.innerText = "Play Audio";
     } else {
         audioQuran.play();
-        titleAudio.innerText = "Qur'an Pause";
+        titleAudio.innerText = "Pause Audio";
     }
 })
 
