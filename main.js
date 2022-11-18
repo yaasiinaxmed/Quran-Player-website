@@ -27,14 +27,14 @@ menu.addEventListener("click", () => {
    }
 })
 
-mainEL.addEventListener("mouseover", () => {
-    if(menu.classList.contains("active")) {
-        showMenu.style.display = 'none';
-     } else {
-       showMenu.style.display = 'none';
-    }
-    menu.classList.remove('active');
-})
+// mainEL.addEventListener("click", () => {
+//     if(menu.classList.contains("active")) {
+//         showMenu.style.display = 'none';
+//      } else {
+//        showMenu.style.display = 'none';
+//     }
+//     menu.classList.remove('active');
+// })
 
 
 togglePlay.addEventListener("click", () => {
