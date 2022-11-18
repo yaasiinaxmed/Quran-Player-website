@@ -27,7 +27,7 @@ menu.addEventListener("click", () => {
    }
 })
 
-mainEL.addEventListener("click", () => {
+mainEL.addEventListener("mouseover", () => {
     if(menu.classList.contains("active")) {
         showMenu.style.display = 'none';
      } else {
