@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qur'an Player</title>
+    <link rel="shorcut icon" href="./src/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="logo">
+                <img src="./src/logo.png" alt="">
+                <h2>Qur'an Player</h2>
+            </div>
+            <div class="menu">
+                <i class="fa fa-bars"></i>
+                <i class="fa fa-xmark"></i>
+            </div>
+            <ul class="showMenu">
+                <li class="active"><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#">Screens</a></li>
+                <div class="title-audio">
+                    <h3>Qur'an Pause</h3>
+                </div>
+                <div class="toggle">
+                   <audio src="./src/Quran.mp3" autoplay></audio>
+                </div>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+            </ul>
+        </div>
+        <div class="scrollTop">
+            <i class="fa fa-angle-up"></i>
+        </div>
+        <div class="main">
+            <div class="home reveal" id="home">
+                <div class="home-left">
+                    <div class="text">
+                        <h2>Qur’an Player Microsoft <br> Edge Browser Extension</h2>
+                        <p>Quran Kareem is a Sadaqah Jariyah. We hope <br>
+                            to make it easy for everyone to read, study,<br>
+                            and learn The Noble Quran. 
+                        </p>
+                    </div>
+                    <div class="buttons">
+                        <a href="https://microsoftedge.microsoft.com/addons/detail/quraan-player/ajofgmhppldfkmggnkfnlkldkagmilnj" class="btn"><i class="fa fa-download"></i><span>Download</span></a>
+                        <a href="https://quraanplayer.netlify.app/" class="btn"><i class="fa fa-eye"></i><span>Overview</span></a>
+                    </div>
+                </div>
+                <img src="./src/home.jpg" class="img" alt="">
+            </div>
+            <div class="about" id="about">
+                <img src="./src/logo2.jpg" alt="">
+                <div class="about-text">
+                    <h2>Qur'an PLayer</h2>
+                    <h4>Read, study, and learn The Noble Quran.</h4>
+                    <p>Qur’an Kareem is a Sadaqah Jariyah. We hope to make it easy for everyone to read,
+                      study, and learn The Noble Quran. The Noble Quran has many names including Al-Quran Al-Kareem,
+                      Al-Ketab, Al-Furqan, Al-Maw'itha, Al-Thikr, and Al-Noor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/scrollreveal"></script>
+   <script src="./main.js"></script>
+</body>
+</html>
