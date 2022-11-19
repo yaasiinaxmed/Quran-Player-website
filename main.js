@@ -1,4 +1,6 @@
 // all veriabls 
+let sections = document.querySelectorAll("section");
+let navLinks = document.querySelectorAll(".showMenu li a")
 const togglePlay = document.querySelector(".toggle");
 const audioQuran = document.querySelector("audio");
 const titleAudio = document.querySelector(".title-audio h3");
@@ -137,7 +139,6 @@ menu.addEventListener("click", () => {
      showMenu.style.display = 'none';
    }
 })
-
 // mainEL.addEventListener("click", () => {
 //     if(menu.classList.contains("active")) {
 //         showMenu.style.display = 'none';
@@ -168,6 +169,27 @@ audioQuran.addEventListener("ended", () => {
 })
 
 // toggle play audio end //
+
+// active section and nav links start // 
+
+window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+        
+        let top = window.scrollY;
+        let offset = section.offsetTop;
+        let height = section.offsetHeight;
+        let id = section.getAttribute("id");
+
+        if(top >= offset && top < offset + height) {
+            navLinks.forEach((navlink) => {
+                navlink.classList.remove("active");
+                document.querySelector(".showMenu li a[href*=" + id +"]").classList.add("active");
+            });
+        };
+    });
+});
+
+// active section and nav links end // 
 
 // animations scroll reveal start //
 const srTop = ScrollReveal({
