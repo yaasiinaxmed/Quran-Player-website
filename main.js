@@ -1,3 +1,4 @@
+// all veriabls 
 const togglePlay = document.querySelector(".toggle");
 const audioQuran = document.querySelector("audio");
 const titleAudio = document.querySelector(".title-audio h3");
@@ -7,30 +8,112 @@ const showMenu = document.querySelector('.showMenu');
 const mainEL = document.querySelector(".main");
 const scrollTop = document.querySelector(".scrollTop");
 const sliders = document.querySelectorAll(".slider");
-const btns = document.querySelectorAll(".btn-radio");
+const slidebtns = document.querySelectorAll(".btn-radio");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+const numberOfSlide = sliders.length;
+let slideNumber = 0;
 
-let currentSlider = 1;
+// sliders next start //
+nextBtn.addEventListener("click", () => {
 
-const menualSlider = function(menual){
+    sliders.forEach(slide => {
+        slide.classList.remove("active");
+    })
 
-    sliders.forEach((slider) => {
+    slidebtns.forEach( slidebtn => {
+        slidebtn.classList.remove("active");
+    })
+
+    slideNumber++;
+
+    if(slideNumber > (numberOfSlide -1)) {
+        slideNumber = 0;
+    }
+
+    clearInterval(playSliders);
+    sliders[slideNumber].classList.add("active");
+    slidebtns[slideNumber].classList.add("active");
+})
+// sliders next end //
+
+// sliders preveis start //
+prevBtn.addEventListener("click", () => {
+
+    sliders.forEach( slider => {
+        slider.classList.remove("active");
+    })
+
+    slidebtns.forEach( slidebtn => {
+        slidebtn.classList.remove("active");
+    })
+
+    slideNumber--;
+
+    if(slideNumber < 0) {
+        slideNumber = numberOfSlide - 2;
+    }
+
+    clearInterval(playSliders)
+    sliders[slideNumber].classList.add("active");
+    slidebtns[slideNumber].classList.add("active");
+})
+
+// sliders preveis end //
+
+// start btnsliders menual // 
+let currentNumber = 1;
+const menualBtn = function(menual){
+
+    sliders.forEach(slider => {
         slider.classList.remove("active");
 
-        btns.forEach( (btn) => {
-            btn.classList.remove("active");
+        slidebtns.forEach(slidebtn => {
+            slidebtn.classList.remove("active");
         });
     });
 
     sliders[menual].classList.add("active");
-    btns[menual].classList.add("active");
+    slidebtns[menual].classList.add("active");
 }
 
-btns.forEach((btn,i) => {
-    btn.addEventListener("click", () => {
-        menualSlider(i);
-        currentSlider = 1;
+slidebtns.forEach((slidebtn, i) => {
+    slidebtn.addEventListener("click", () => {
+        menualBtn(i);
+        currentNumber = i;
+        clearInterval(playSliders);
     });
 });
+// end btnsliders menual //
+
+// sliders autoplay start //
+let playSliders;
+
+const repeater = () => {
+    playSliders = setInterval( () => {
+        sliders.forEach(slide => {
+            slide.classList.remove("active");
+        })
+    
+        slidebtns.forEach( slidebtn => {
+            slidebtn.classList.remove("active");
+        })
+    
+        slideNumber++;
+    
+        if(slideNumber > (numberOfSlide -1)) {
+            slideNumber = 0;
+        }
+    
+        sliders[slideNumber].classList.add("active");
+        slidebtns[slideNumber].classList.add("active");
+    }, 4000)
+}
+
+repeater();
+// sliders autoplay end //
+
+// scroll top start //
 
 window.addEventListener("scroll", () => {
     scrollTop.classList.toggle("active", window.scrollY > 400);
@@ -43,6 +126,9 @@ scrollTop.addEventListener("click", () => {
    })
 })
 
+// scroll top end //
+
+//responsive navigation start //
 menu.addEventListener("click", () => {
    menu.classList.toggle("active");
    if(menu.classList.contains("active")) {
@@ -61,7 +147,9 @@ menu.addEventListener("click", () => {
 //     menu.classList.remove('active');
 // })
 
+//responsive navigation end //
 
+// toggle play audio start //
 togglePlay.addEventListener("click", () => {
     togglePlay.classList.toggle("show");
     if(togglePlay.classList.contains('show')) {
@@ -79,6 +167,9 @@ audioQuran.addEventListener("ended", () => {
     audioQuran.play();
 })
 
+// toggle play audio end //
+
+// animations scroll reveal start //
 const srTop = ScrollReveal({
     origin: 'top',
     distance: '80px',
@@ -101,6 +192,8 @@ const srLeft = ScrollReveal({
 })
 
 srLeft.reveal('.about img', {delay: 300})
+srLeft.reveal('.prev', {delay: 300})
+
 
 const srRight = ScrollReveal({
     origin: 'right',
@@ -110,4 +203,7 @@ const srRight = ScrollReveal({
 })
 
 srRight.reveal('.about-text', {delay: 300})
+srRight.reveal('.next', {delay: 300})
+ 
+//animations scroll reveal end //
 
