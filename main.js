@@ -228,4 +228,3 @@ srRight.reveal('.about-text', {delay: 300})
 srRight.reveal('.next', {delay: 300})
  
 //animations scroll reveal end //
-
