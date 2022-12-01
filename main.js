@@ -139,15 +139,6 @@ menu.addEventListener("click", () => {
      showMenu.style.display = 'none';
    }
 })
-// mainEL.addEventListener("click", () => {
-//     if(menu.classList.contains("active")) {
-//         showMenu.style.display = 'none';
-//      } else {
-//        showMenu.style.display = 'none';
-//     }
-//     menu.classList.remove('active');
-// })
-
 //responsive navigation end //
 
 // toggle play audio start //
@@ -173,20 +164,20 @@ audioQuran.addEventListener("ended", () => {
 // active section and nav links start // 
 
 window.addEventListener("scroll", () => {
-    sections.forEach(section => {
-        
-        let top = window.scrollY;
-        let offset = section.offsetTop;
-        let height = section.offsetHeight;
-        let id = section.getAttribute("id");
+   let id = '';
 
-        if(top >= offset && top < offset + height) {
-            navLinks.forEach((navlink) => {
-                navlink.classList.remove("active");
-                document.querySelector(".showMenu li a[href*=" + id +"]").classList.add("active");
-            });
-        };
-    });
+   sections.forEach(section => {
+     const secTop = section.offsetTop;
+
+     if (scrollY >= secTop - 65) {
+        id = section.getAttribute("id");
+     }
+   });
+
+   navLinks.forEach(navlink => {
+     navlink.classList.remove("active");
+     document.querySelector('.showMenu li a[href*=' + id +']').classList.add("active");
+   })
 });
 
 // active section and nav links end // 
